@@ -16,4 +16,13 @@ urlpatterns = [
     url(r'^cliente/new/$', views.cliente_new, name='cliente_new'),
     url(r'^cliente/(?P<pk>[0-9]+)/edit/$', views.cliente_edit, name='cliente_edit'),
     url(r'^cliente/(?P<pk>\d+)/remove/$', views.cliente_remove, name='cliente_remove'),
+    
+    url(r'^combo/$', views.combo_list, name='combo_list'),
+    url(r'^combo/(?P<pk>[0-9]+)/$', views.combo_detail,  name='combo_detail'),
+    url(r'^combo/new/$', views.combo_new, name='combo_new'),
+    url(r'^combo/(?P<pk>[0-9]+)/edit/$', views.combo_edit, name='combo_edit'),
+    url(r'^combo/(?P<pk>\d+)/remove/$', views.combo_remove, name='combo_remove'),
+
+    url(r'^pago/$', views.pago_list, name='pago_list'),
+    url(r'^pago/new/$', views.pago_new, name='pago_new'),
     ]

@@ -1,0 +1,23 @@
+{% extends 'pagoplanmovil/base.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<h1>Vista Combo </h1>
+
+<div class="card border-primary mb-3" style="max-width: 100%;">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h4 class="card-title">{{ combo.nombre }}</h4>
+    <p class="card-text">
+    <p>{{ combo.monto|linebreaksbr }}</p>
+      <a class="badge badge-info" href="{% url 'combo_edit' pk=combo.pk %}">Editar</a>
+      <a class="badge badge-danger" href="{% url 'combo_remove' pk=combo.pk %}">Borrar</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
