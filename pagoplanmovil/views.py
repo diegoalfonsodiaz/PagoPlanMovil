@@ -6,8 +6,10 @@ from .forms import ClienteForm, ComboForm, PagoForm
 from pagoplanmovil.models import Cliente, Combo, Pago, Factura
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def cliente_new(request):
     if request.method == "POST":
         form = ClienteForm(request.POST)
@@ -30,12 +32,13 @@ def cliente_detail(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
     return render(request, 'pagoplanmovil/cliente_detail.html', {'cliente': cliente})
 
+@login_required
 def cliente_remove(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
     cliente.delete()
     return redirect('cliente_list')
 
-
+@login_required
 def cliente_edit(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
     if request.method == "POST":
@@ -67,7 +70,7 @@ def combo_detail(request, pk):
     return render(request, 'pagoplanmovil/combo_detail.html', {'combo': combo})
 
 
-
+@login_required
 def combo_new(request):
     if request.method == "POST":
         form = ComboForm(request.POST)
@@ -81,7 +84,7 @@ def combo_new(request):
         form = ComboForm()
     return render(request, 'pagoplanmovil/combo_edit.html', {'form': form})
 
-
+@login_required
 def combo_edit(request, pk):
     combo = get_object_or_404(Combo, pk=pk)
     if request.method == "POST":
@@ -95,7 +98,7 @@ def combo_edit(request, pk):
         form = ComboForm(instance=combo)
     return render(request, 'pagoplanmovil/combo_edit.html', {'form': form})
 
-
+@login_required
 def combo_remove(request, pk):
     combo = get_object_or_404(Combo, pk=pk)
     combo.delete()
@@ -113,7 +116,7 @@ def pago_list(request):
     pagos = Pago.objects.all()
     return render(request, 'pagoplanmovil/pago_list.html', {'pagos': pagos})
 
-
+@login_required
 def pago_new(request):
     if request.method == "POST":
         formulario = PagoForm(request.POST)
