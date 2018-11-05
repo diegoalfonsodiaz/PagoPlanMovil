@@ -1,0 +1,30 @@
+{% extends 'pagoplanmovil/base.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<h1>Clientes</h1>
+<a  class="btn btn-outline-primary" href="{% url 'cliente_new' %}"> Nuevo </a>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Numero</th>
+        <th scope="col">Email</th>
+        <th scope="col"> Acciones</th>
+      </tr>
+    </thead>
+        {% for cliente in clientes %}
+        <tr class="table-active">
+            
+            <td> {{ cliente.nombre }} </td>
+            <td>{{ cliente.numero }}</td>
+            <td>{{ cliente.email|linebreaksbr }}</td>
+            <td><a class="badge badge-success" href="{% url 'cliente_detail' pk=cliente.pk %}"> Ver </a> </td>
+          </tr>
+                
+            
+        {% endfor %}
+</table> 
+{% endblock %}

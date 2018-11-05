@@ -1,0 +1,24 @@
+{% extends 'pagoplanmovil/base.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<h1>Vista Cliente </h1>
+
+<div class="card border-primary mb-3" style="max-width: 100%;">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h4 class="card-title">{{ cliente.nombre }}</h4>
+    <p class="card-text">
+    <p>{{ cliente.numero|linebreaksbr }}</p>
+    <p>{{ cliente.email }}</p>
+    <a class="btn btn-default" href="{% url 'cliente_edit' pk=cliente.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
+      <a class="btn btn-default" href="{% url 'cliente_remove' pk=cliente.pk %}"><span class="glyphicon glyphicon-remove">Borrar</span></a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
