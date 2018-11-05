@@ -13,11 +13,11 @@
         <th scope="col"> Empleado</th>
       </tr>
     </thead>
-        {% for combo in combos %}
+        {% for pago in pagos %}
         <tr class="table-active">
             
             <td> {{ pago.montototal }}</td>
-            <td>{{ pago.residente.nombre }}</td>
+            <td>{{ pago.cliente.nombre }}</td>
             <td>{{ pago.empleado.username|linebreaksbr }}</td>
 
           </tr>
