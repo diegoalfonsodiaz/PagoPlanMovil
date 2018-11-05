@@ -25,4 +25,6 @@ urlpatterns = [
 
     url(r'^pago/$', views.pago_list, name='pago_list'),
     url(r'^pago/new/$', views.pago_new, name='pago_new'),
+
+    url(r'^factura/$', views.factura_list, name='factura_list'),
     ]

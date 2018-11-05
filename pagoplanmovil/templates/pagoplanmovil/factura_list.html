@@ -1,0 +1,30 @@
+{% extends 'pagoplanmovil/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<h1>Factura</h1>
+<a  class="btn btn-outline-primary" href="{% url 'pago_new' %}"> Nuevo </a>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Monto Total</th>
+        <th scope="col">Cliente</th>
+        <th scope="col"> Fecha</th>
+        <th scope="col"> Combo</th>
+      </tr>
+    </thead>
+        {% for factura in facturas %}
+        <tr class="table-active">
+            
+            <td> {{ factura.pago.montototal }}</td>
+            <td>{{ factura.cliente.nombre }}</td>
+            <td>{{ factura.pago.fecha }}</td>
+            <td>{{ factura.combo.nombre|linebreaksbr }}</td>
+
+          </tr>
+                
+            
+        {% endfor %}
+</table> 
+{% endblock %}

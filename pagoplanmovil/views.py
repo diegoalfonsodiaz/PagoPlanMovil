@@ -144,4 +144,4 @@ def pago_new(request):
 
 def factura_list(request):
     facturas = Factura.objects.all()
-    return render(request, 'blog/factura_list.html', {'facturas': facturas})
+    return render(request, 'pagoplanmovil/factura_list.html', {'facturas': facturas})
