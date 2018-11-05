@@ -15,8 +15,8 @@
     <p class="card-text">
     <p>{{ cliente.numero|linebreaksbr }}</p>
     <p>{{ cliente.email }}</p>
-    <a class="btn btn-default" href="{% url 'cliente_edit' pk=cliente.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
-      <a class="btn btn-default" href="{% url 'cliente_remove' pk=cliente.pk %}"><span class="glyphicon glyphicon-remove">Borrar</span></a>
+      <a class="badge badge-info" href="{% url 'cliente_edit' pk=cliente.pk %}">Editar</a>
+      <a class="badge badge-danger" href="{% url 'cliente_remove' pk=cliente.pk %}">Borrar</a>
     </p>
   </div>
 </div>

@@ -21,7 +21,11 @@
             <td> {{ cliente.nombre }} </td>
             <td>{{ cliente.numero }}</td>
             <td>{{ cliente.email|linebreaksbr }}</td>
-            <td><a class="badge badge-success" href="{% url 'cliente_detail' pk=cliente.pk %}"> Ver </a> </td>
+            <td>
+              <a class="badge badge-success" href="{% url 'cliente_detail' pk=cliente.pk %}"> Ver </a> 
+              <a class="badge badge-info" href="{% url 'cliente_edit' pk=cliente.pk %}">Editar</a>
+              <a class="badge badge-danger" href="{% url 'cliente_remove' pk=cliente.pk %}">Borrar</a>
+            </td>
           </tr>
                 
             
